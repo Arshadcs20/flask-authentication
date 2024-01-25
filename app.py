@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config.from_object(config)
 
 client = MongoClient(config.MONGO_URI,tlsCAFile=certifi.where())
-db = client["Userdatabase"]
+db = client["emo"]
 col = db["users"]
 
 @app.route('/')
@@ -50,5 +50,5 @@ def welcome():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.secret_key = 'your_secret_key'
+    app.secret_key = 'marshadcs20-24plusMisbah'
     app.run(debug=True)
